@@ -1,0 +1,7 @@
+.git
+.kiro
+node_modules
+*.md
+test-runner.html
+projectStructure.js
+data
