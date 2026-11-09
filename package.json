@@ -1,0 +1,23 @@
+{
+  "name": "healthy-catering-landing-page",
+  "version": "1.0.0",
+  "description": "A modern, responsive landing page for a healthy catering service",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "echo \"No CSS build step required for vanilla CSS\"",
+    "build:js": "echo \"No JS build step required for vanilla JS\"",
+    "test": "echo \"No tests configured yet\" && exit 0"
+  },
+  "keywords": [
+    "healthy",
+    "catering",
+    "landing-page",
+    "responsive",
+    "vanilla-js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {}
+}

@@ -1,0 +1,96 @@
+/* Responsive Breakpoints */
+/* Based on mobile-first approach with breakpoints at 768px (tablet) and 1024px (desktop) */
+
+/* Mobile First - Default (0px and up) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --font-size-display: calc(var(--font-size-base) * 3);  /* 48px */
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  :root {
+    --font-size-display: calc(var(--font-size-base) * 3.125); /* 50px */
+  }
+}
+
+/* Utility classes for responsive behavior */
+/* These can be used in HTML or CSS */
+@media (max-width: 767px) {
+  /* Mobile-specific styles */
+  .u-hidden-mobile {
+    display: none !important;
+  }
+  
+  .u-block-mobile {
+    display: block !important;
+  }
+  
+  .u-flex-mobile {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Tablet-specific styles */
+  .u-hidden-tablet {
+    display: none !important;
+  }
+  
+  .u-block-tablet {
+    display: block !important;
+  }
+  
+  .u-flex-tablet {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop-specific styles */
+  .u-hidden-desktop {
+    display: none !important;
+  }
+  
+  .u-block-desktop {
+    display: block !important;
+  }
+  
+  .u-flex-desktop {
+    display: flex !important;
+  }
+}
+
+/* Screen reader only utility - visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Screen reader only when focused */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
