@@ -1,0 +1,209 @@
+/* Services Grid Responsive Styles
+   Healthy Catering Landing Page
+   Requirements: 3.1, 3.3, 4.4 */
+
+@import '../utils/variables.css';
+
+/* Services Grid Container
+   Requirement 3.1: Grid layout for service cards */
+.services-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+/* Service Card Component
+   Requirement 3.1: Service category card with icon */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  /* Accessibility: Ensure visible focus state */
+  outline: none;
+}
+
+/* Hover and Focus States
+   Requirement 3.3: Hover animation lasting 300ms */
+.service-card:hover,
+.service-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card:focus {
+  box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.3), var(--shadow-lg);
+}
+
+.service-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Service Card Icon Container
+   Requirement 3.1: Minimum 100x100px icons, up to 128px */
+.service-card__icon {
+  width: 100%;
+  max-width: 120px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-card__icon img,
+.service-card__icon svg {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  min-height: 100px;
+  object-fit: contain;
+  transition: transform var(--transition-normal);
+}
+
+.service-card:hover .service-card__icon img,
+.service-card:focus .service-card__icon img,
+.service-card:focus-within .service-card__icon svg {
+  transform: scale(1.1);
+}
+
+/* Service Card Title
+   Requirement 3.2: Maximum 60 characters */
+.service-card__title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm);
+  line-height: var(--line-height-base);
+}
+
+/* Service Card Description
+   Requirement 3.2: Maximum 200 characters */
+.service-card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Service Card Features List
+   Requirement 3.2: Maximum 8 items */
+.service-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.service-card__features li {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.service-card__features li::before {
+  content: "✓";
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  margin-right: var(--spacing-sm);
+  font-size: var(--font-size-base-large);
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet (768px and above) - 2 columns */
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl);
+  }
+
+  .service-card {
+    padding: var(--spacing-2xl);
+  }
+
+  .service-card__icon {
+    max-width: 140px;
+  }
+
+  .service-card__icon img,
+  .service-card__icon svg {
+    max-width: 112px;
+    min-height: 112px;
+  }
+
+  .service-card__title {
+    font-size: var(--font-size-h3);
+  }
+
+  .service-card__description {
+    font-size: var(--font-size-base-large);
+  }
+
+  .service-card__features {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Desktop (1024px and above) - 3 columns with larger icons */
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-3xl);
+  }
+
+  .service-card {
+    padding: var(--spacing-xxl);
+  }
+
+  .service-card__icon {
+    max-width: 160px;
+  }
+
+  .service-card__icon img,
+  .service-card__icon svg {
+    max-width: 128px;
+    min-height: 128px;
+  }
+
+  .service-card__title {
+    font-size: var(--font-size-h2);
+  }
+
+  .service-card__description {
+    font-size: var(--font-size-base);
+  }
+
+  .service-card__features {
+    gap: var(--spacing-md);
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .service-card:hover,
+  .service-card:focus,
+  .service-card:focus-within {
+    transform: none;
+  }
+
+  .service-card:hover .service-card__icon img,
+  .service-card:focus .service-card__icon img,
+  .service-card:focus-within .service-card__icon svg {
+    transform: none;
+  }
+
+  .service-card,
+  .service-card__icon img,
+  .service-card__icon svg {
+    transition: none;
+  }
+}

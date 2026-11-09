@@ -1,0 +1,286 @@
+/* Menu Grid Component Styles
+   Healthy Catering Landing Page
+   Requirements: 4.3, 4.4 */
+
+@import '../utils/variables.css';
+
+/* =========================================
+   RESPONSIVE MENU GRID LAYOUT
+   ========================================= */
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+/* =========================================
+   MENU ITEM CARD
+   ========================================= */
+
+.menu-item {
+  background-color: var(--color-background);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.menu-item:focus-within {
+  box-shadow: var(--shadow-xl);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.menu-item__image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.menu-item__image-container::before {
+  display: block;
+  content: '';
+  padding-top: calc(9 / 16 * 100%);
+}
+
+.menu-item__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.menu-item:hover .menu-item__image {
+  transform: scale(1.05);
+}
+
+.menu-item__content {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.menu-item__title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.menu-item__description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.menu-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.menu-item__tag {
+  font-size: var(--font-size-base-small);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.menu-item__tag--vegan {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.menu-item__tag--gluten-free {
+  background-color: #FFF3E0;
+  color: #EF6C00;
+}
+
+.menu-item__tag--keto {
+  background-color: #E3F2FD;
+  color: #1565C0;
+}
+
+.menu-item__tag--vegetarian {
+  background-color: #F3E5F5;
+  color: #7B1FA2;
+}
+
+.menu-item__tag--dairy-free {
+  background-color: #E0F2F1;
+  color: #00897B;
+}
+
+.menu-item__serving {
+  font-size: var(--font-size-base-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+}
+
+/* =========================================
+   FILTER BUTTONS
+   ========================================= */
+
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.filter-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  background-color: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+.filter-btn.active:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+
+/* Tablet (768px and up) */
+@media (min-width: var(--breakpoint-tablet)) {
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-btn {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: var(--breakpoint-desktop)) {
+  .menu__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu__grid {
+    gap: var(--spacing-2xl);
+  }
+
+  .menu-item__title {
+    font-size: var(--font-size-h3);
+  }
+
+  .menu-item__description {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Wide screens (1280px and up) */
+@media (min-width: var(--breakpoint-wide)) {
+  .menu__grid {
+    gap: var(--spacing-3xl);
+  }
+
+  .filter-btn {
+    padding: var(--spacing-md) var(--spacing-2xl);
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.menu-item__image:focus {
+  outline: none;
+}
+
+/* Screen reader only for decorative elements */
+.menu-item__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================
+   PRINT STYLES
+   ========================================= */
+
+@media print {
+  .menu__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .menu-item {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .menu-filters {
+    display: none;
+  }
+
+  .menu-item__image-container {
+    display: none;
+  }
+
+  .filter-btn {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+  }
+}

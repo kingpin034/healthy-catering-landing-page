@@ -1,0 +1,19 @@
+/* Main Stylesheet
+   Healthy Catering Landing Page */
+
+/* Import CSS variables first */
+@import './utils/variables.css';
+
+/* Import base reset and normalize styles */
+@import './base/reset.css';
+
+/* Import component styles */
+@import './components/navigation.css';
+@import './components/hero.css';
+@import './components/services-grid.css';
+@import './components/services.css';
+@import './components/menu-grid.css';
+@import './components/team-grid.css';
+@import './components/about.css';
+@import './components/contact.css';
+@import './components/footer.css';

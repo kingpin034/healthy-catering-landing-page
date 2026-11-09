@@ -1,0 +1,162 @@
+/* Team Grid Styles
+   Healthy Catering Landing Page
+   Requirements: 5.3, 13.3 */
+
+@import '../utils/variables.css';
+
+/* Team Grid Container
+   Requirement 5.1: Team member grid with 4-6 members
+   Requirement 5.3: Responsive breakpoints (1-2-4 columns) */
+.team-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+/* Team Member Card
+   Requirement 5.1: Photos 200x200px minimum, names, roles, bios (max 150 chars)
+   Requirement 13.3: Consistent image styling (border-radius: 8px) */
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  border: 1px solid var(--color-border);
+}
+
+.team-member:hover,
+.team-member:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-member:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.3), var(--shadow-lg);
+}
+
+/* Team Member Image
+   Requirement 5.1: 200x200px minimum, border-radius: 8px (Requirement 13.3) */
+.team-member__image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  transition: transform var(--transition-normal);
+}
+
+.team-member:hover .team-member__image,
+.team-member:focus-within .team-member__image {
+  transform: scale(1.05);
+}
+
+/* Team Member Content */
+.team-member__content {
+  text-align: center;
+  width: 100%;
+}
+
+/* Team Member Name */
+.team-member__name {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-xs);
+}
+
+/* Team Member Role */
+.team-member__role {
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-sm);
+}
+
+/* Team Member Bio - max 150 characters
+   Requirement 5.1 */
+.team-member__bio {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet (768px) - 2 columns
+   Requirement 5.3: Desktop grid layout (768px and above) - 2-4 columns */
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-member__image {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Large Tablet/Desktop (1024px) - 3-4 columns
+   Requirement 5.3: Responsive breakpoints at 768px and 1024px */
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+  }
+
+  .team-member {
+    padding: var(--spacing-xl);
+  }
+
+  .team-member__image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .team-member__name {
+    font-size: var(--font-size-h3);
+  }
+
+  .team-member__role {
+    font-size: var(--font-size-base-large);
+  }
+
+  .team-member__bio {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Desktop (1280px) - Up to 4 columns */
+@media (min-width: 1280px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .team-member:hover,
+  .team-member:focus-within {
+    transform: none;
+  }
+
+  .team-member:hover .team-member__image,
+  .team-member:focus-within .team-member__image {
+    transform: none;
+  }
+
+  .team-member__image {
+    transition: none;
+  }
+}
+
+/* Accessibility - Requirement 9 */
+.team-member:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.3), var(--shadow-lg);
+}

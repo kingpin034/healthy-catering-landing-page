@@ -1,0 +1,334 @@
+/* Navigation Component Styles
+ * BEM Methodology: .navigation, .navigation__*, .navigation--*
+ * Requirement: 1.2, 1.4, 1.5, 1.6, 9.2
+ */
+
+/* Import CSS custom properties for consistent theming */
+@import '../utils/variables.css';
+
+/* ========================================
+   Main Navigation Container
+   ======================================== */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+/* ========================================
+   Brand / Logo
+   ======================================== */
+.navigation__brand {
+  flex-shrink: 0;
+}
+
+.navigation__brand a {
+  display: block;
+}
+
+.navigation__brand img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ========================================
+   Navigation Menu
+   ======================================== */
+.navigation__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.navigation__menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__menu a {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-base);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.navigation__menu a:hover {
+  color: var(--color-primary);
+  background-color: var(--color-background-light);
+}
+
+/* ========================================
+   Hamburger Menu Toggle Button
+   ======================================== */
+.navigation__toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.navigation__toggle:hover {
+  background-color: var(--color-background-light);
+}
+
+.navigation__toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Hamburger Icon
+   ======================================== */
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 18px;
+}
+
+.hamburger__bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  transition: transform var(--transition-normal) ease,
+              top var(--transition-normal) ease,
+              bottom var(--transition-normal) ease,
+              opacity var(--transition-normal) ease;
+}
+
+.hamburger__bar:nth-child(1) {
+  top: 0;
+}
+
+.hamburger__bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger__bar:nth-child(3) {
+  bottom: 0;
+}
+
+/* ========================================
+   Hamburger Active State (Menu Open)
+   ======================================== */
+.hamburger--active .hamburger__bar:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.hamburger--active .hamburger__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--active .hamburger__bar:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(45deg);
+}
+
+/* ========================================
+   Mobile Menu (Hidden by default, shown when active)
+   ======================================== */
+@media (max-width: calc(var(--breakpoint-tablet) - 1px)) {
+  .navigation__toggle {
+    display: flex;
+  }
+
+  .navigation__menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-lg);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-slow) ease-out,
+                opacity var(--transition-normal) ease-out;
+    opacity: 0;
+    gap: 0;
+  }
+
+  .navigation__menu li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .navigation__menu a {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    width: 100%;
+    font-size: var(--font-size-base-large);
+  }
+
+  /* Active state - menu open */
+  .navigation__menu--active {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  /* ========================================
+     Mobile Focus States
+     ======================================== */
+  .navigation__menu a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    background-color: var(--color-background-light);
+  }
+}
+
+/* ========================================
+   Desktop Menu (Always visible)
+   ======================================== */
+@media (min-width: var(--breakpoint-tablet)) {
+  .navigation {
+    padding: var(--spacing-md) calc(var(--spacing-unit) * 6);
+  }
+
+  .navigation__menu {
+    opacity: 1;
+    max-height: none;
+    box-shadow: none;
+  }
+
+  .navigation__menu li {
+    border-bottom: none;
+  }
+
+  .navigation__menu a {
+    font-size: var(--font-size-base);
+  }
+
+  .navigation__menu a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    background-color: var(--color-background-light);
+  }
+}
+
+/* ========================================
+   Active Menu Item State
+   ======================================== */
+.navigation__menu a[aria-current='page'],
+.navigation__menu a.is-active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-background-light);
+}
+
+/* ========================================
+   Smooth Scroll Animation
+   Requirement: 1.5 (500ms smooth scroll)
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   Click-Outside Behavior Support
+   Note: JavaScript handles the actual click-outside-to-close logic
+   ======================================== */
+/* Empty placeholder for potential CSS-only approach if needed */
+
+/* ========================================
+   Accessibility Improvements
+   Requirement: 9.2, 9.5
+   ======================================== */
+/* Skip to main content link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  z-index: var(--z-index-fixed);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: var(--sr-only-position);
+  width: var(--sr-only-width);
+  height: var(--sr-only-height);
+  padding: var(--sr-only-padding);
+  margin: var(--sr-only-margin);
+  overflow: var(--sr-only-overflow);
+  border: var(--sr-only-border);
+  clip: var(--sr-only-clip);
+  clip-path: var(--sr-only-clip-path);
+}
+
+/* ========================================
+   Focus States for Keyboard Navigation
+   Requirement: 9.5 (2px outline)
+   ======================================== */
+/* All interactive elements should have visible focus indicators */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Hamburger button specific focus states */
+.navigation__toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Keyboard Navigation Support
+   Requirement: 9.2 (Tab, Enter, Space)
+   ======================================== */
+/* Ensure all interactive elements are keyboard accessible */
+a[role='menuitem'],
+button[role='menuitem'],
+button[aria-expanded] {
+  outline: none;
+}
+
+a[role='menuitem']:focus-visible,
+button[role='menuitem']:focus-visible,
+button[aria-expanded]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Responsive Breakpoints
+   Requirement: 9.2 (768px breakpoint)
+   ======================================== */

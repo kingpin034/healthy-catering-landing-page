@@ -1,0 +1,54 @@
+[
+  {
+    "id": "corporate-events",
+    "title": "Corporate Events",
+    "description": "Professional catering for business meetings, conferences, and corporate gatherings.",
+    "icon": "assets/icons/business-event.svg",
+    "features": [
+      "Delivered hot meals",
+      "Custom menu options",
+      "Service staff available",
+      "Flexible scheduling",
+      "Office kitchen setup"
+    ]
+  },
+  {
+    "id": "weddings",
+    "title": "Weddings",
+    "description": "Elegant catering for your special day with custom menu design and professional service.",
+    "icon": "assets/icons/wedding.svg",
+    "features": [
+      "Custom menu design",
+      "Professional service staff",
+      "Beverage service options",
+      "Tasting appointments",
+      "Venue coordination"
+    ]
+  },
+  {
+    "id": "fitness-retreats",
+    "title": "Fitness Retreats",
+    "description": "Nutrition-focused meals designed for fitness enthusiasts and wellness retreats.",
+    "icon": "assets/icons/fitness.svg",
+    "features": [
+      "High-protein options",
+      "Organic ingredients",
+      "Dietary-specific meals",
+      "Bulk ordering discounts",
+      "Meal timing guidance"
+    ]
+  },
+  {
+    "id": "personal-meal-prep",
+    "title": "Personal Meal Prep",
+    "description": "Weekly meal preparation services tailored to your dietary needs and preferences.",
+    "icon": "assets/icons/meal-prep.svg",
+    "features": [
+      "Weekly delivery",
+      "Dietary-specific planning",
+      "Flexible subscription options",
+      "Recipe customization",
+      "Refrigerated packaging"
+    ]
+  }
+]

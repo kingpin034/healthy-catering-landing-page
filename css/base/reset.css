@@ -1,0 +1,296 @@
+/* Base Reset and Normalize Styles
+   Requirement 13.4 */
+
+@import '../utils/variables.css';
+@import '../utils/typography.css';
+
+/* =========================================
+   CSS Reset and Normalize
+   ========================================= */
+
+/* 1. Use border-box model for all elements - Requirement 13.4 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Reset margin and padding to zero for consistent baseline */
+html, body, h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd,
+ul, ol, li,
+form, legend, fieldset,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Reset list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* 4. Remove default link styles - Requirement 13.4 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+
+/* 5. Remove default button styles */
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* 6. Remove default fieldset and legend styles */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 7. Remove default form element styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Remove search field cancel button (Webkit) */
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* 8. Normalize text sizes */
+html {
+  font-size: var(--font-size-base);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* 9. Set default font family - Requirement 13.4 */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-main);
+  background-color: var(--color-background);
+}
+
+/* 10. Normalize heading sizes and spacing */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+h1 { font-size: var(--font-size-5xl); margin-bottom: var(--spacing-2xl); }
+h2 { font-size: var(--font-size-4xl); margin-bottom: var(--spacing-xl); }
+h3 { font-size: var(--font-size-3xl); margin-bottom: var(--spacing-lg); }
+h4 { font-size: var(--font-size-2xl); margin-bottom: var(--spacing-md); }
+h5 { font-size: var(--font-size-xl); margin-bottom: var(--spacing-md); }
+h6 { font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm); }
+
+/* 11. Normalize paragraph spacing */
+p {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 12. Normalize text-level elements */
+strong { font-weight: var(--font-weight-bold); }
+em { font-style: italic; }
+
+/* 13. Normalize code elements */
+code, kbd, samp, pre {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+/* 14. Normalize blockquote */
+blockquote {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '';
+  content: none;
+}
+
+/* 15. Normalize inline elements */
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/* 16. Normalize tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 17. Normalize images - Requirement 13.4 */
+img {
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+/* 18. Normalize SVG */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* 19. Normalize iframe */
+iframe {
+  border: 0;
+}
+
+/* 20. Normalize address */
+address {
+  font-style: normal;
+}
+
+/* 21. Normalize mark (highlight) */
+mark {
+  background-color: #ffeb3b;
+  color: #000;
+}
+
+/* 22. Normalize small */
+small {
+  font-size: 80%;
+}
+
+/* 23. Normalize sub and sup */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+
+/* 24. Normalize hr (horizontal rule) */
+hr {
+  box-sizing: content-box;
+  height: 1px;
+  background-color: var(--color-border);
+  border: 0;
+  margin: var(--spacing-2xl) 0;
+}
+
+/* 25. Normalize summary */
+summary {
+  display: list-item;
+}
+
+/* 26. Normalize template (HTML5) */
+template {
+  display: none;
+}
+
+/* 27. Normalize hidden (HTML5) */
+[hidden] {
+  display: none;
+}
+
+/* 28. Focus styles for accessibility - Requirement 13.4 */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* 29. Selection colors */
+::-moz-selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* 30. Print styles (optional base) */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+  
+  img {
+    page-break-inside: avoid;
+  }
+  
+  h2,
+  h3,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

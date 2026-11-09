@@ -1,0 +1,426 @@
+/* Services Section Styles
+   Healthy Catering Landing Page
+   Requirements: 3.1, 3.2, 3.4 */
+
+@import '../utils/variables.css';
+
+/* Services Section Container
+   Requirement 3.1: Display 3-5 service category cards with icons/images */
+.services {
+  padding: var(--spacing-section) var(--spacing-small);
+  background-color: var(--color-background);
+}
+
+.services__container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-medium);
+}
+
+.services__header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.services__title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-tight);
+}
+
+.services__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Services Grid
+   Requirement 3.1: Grid layout with at least 3 service cards */
+.services__grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Service Card Component
+   Requirement 3.1: Service category cards with icons/images */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+}
+
+.service-card:hover,
+.service-card:focus {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  outline: none;
+}
+
+.service-card:focus {
+  box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.3), var(--shadow-lg);
+}
+
+/* Service Card Icon
+   Requirement 3.1: Minimum 100x100px icons */
+.service-card__icon {
+  width: 100%;
+  max-width: 120px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-card__icon img,
+.service-card__icon svg {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  min-height: 100px;
+  object-fit: contain;
+}
+
+/* Service Card Title
+   Requirement 3.2: Maximum 60 characters */
+.service-card__title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm);
+  line-height: var(--line-height-base);
+}
+
+/* Service Card Description
+   Requirement 3.2: Maximum 200 characters */
+.service-card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-md);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Service Card Features List
+   Requirement 3.2: Maximum 8 items */
+.service-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.service-card__features li {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.service-card__features li::before {
+  content: "✓";
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  margin-right: var(--spacing-sm);
+  font-size: var(--font-size-base-large);
+}
+
+/* Error State for Failed Service Cards
+   Requirement 3.1: Error handling for failed service loading */
+.service-card--error {
+  border-color: var(--color-error);
+  background-color: #fff5f5;
+}
+
+.service-card--error .service-card__icon {
+  color: var(--color-error);
+}
+
+.service-card--error .service-card__title {
+  color: var(--color-error);
+}
+
+.service-card--error::after {
+  content: "⚠";
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  color: var(--color-error);
+  font-size: var(--font-size-h4);
+}
+
+/* Loading State */
+.service-card--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.service-card--loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--color-primary), 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: loading-skeleton 1.5s infinite;
+}
+
+/* Error Message Container */
+.service-error {
+  grid-column: 1 / -1;
+  padding: var(--spacing-lg);
+  background-color: var(--color-background-light);
+  border-radius: var(--radius-md);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.service-error__message {
+  color: var(--color-error);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-error__retry {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.service-error__retry:hover {
+  background-color: var(--color-primary-light);
+}
+
+.service-error__retry:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive Breakpoints
+   Requirement: Responsive layout at 768px */
+@media (min-width: 480px) {
+  .services__grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .services {
+    padding: var(--spacing-section) var(--spacing-medium);
+  }
+
+  .services__container {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+  }
+
+  .service-card {
+    padding: var(--spacing-2xl);
+  }
+
+  .service-card__icon {
+    max-width: 140px;
+  }
+
+  .service-card__icon img,
+  .service-card__icon svg {
+    max-width: 112px;
+    min-height: 112px;
+  }
+
+  .service-card__title {
+    font-size: var(--font-size-h3);
+  }
+
+  .service-card__description {
+    font-size: var(--font-size-base-large);
+  }
+
+  .service-card__features {
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .services__container {
+    padding: 0;
+  }
+
+  .services__title {
+    font-size: var(--font-size-h1);
+  }
+
+  .services__subtitle {
+    font-size: var(--font-size-base-large);
+  }
+
+  .services__grid {
+    gap: var(--spacing-3xl);
+  }
+
+  .service-card {
+    padding: var(--spacing-xxl);
+  }
+
+  .service-card__icon {
+    max-width: 160px;
+  }
+
+  .service-card__icon img,
+  .service-card__icon svg {
+    max-width: 128px;
+    min-height: 128px;
+  }
+
+  .service-card__title {
+    font-size: var(--font-size-h2);
+  }
+
+  .service-card__description {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Animation Keyframes */
+@keyframes loading-skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .service-card:hover,
+  .service-card:focus {
+    transform: none;
+  }
+
+  .service-error__retry {
+    transition: none;
+  }
+
+  .service-card--loading::before {
+    animation: none;
+  }
+}
+/* Loading State */
+.service-card--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.service-card--loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--color-primary), 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: loading-skeleton 1.5s infinite;
+}
+
+/* Service Icon Error State */
+.service-card--error .service-card__icon {
+  color: var(--color-error);
+}
+
+.service-card__icon--error {
+  color: var(--color-error);
+}
+
+.service-card__icon--error svg,
+.service-card__icon--error img {
+  color: var(--color-error);
+}
+
+/* Error Message Container */
+.service-error {
+  grid-column: 1 / -1;
+  padding: var(--spacing-lg);
+  background-color: var(--color-background-light);
+  border-radius: var(--radius-md);
+  text-align: center;
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+  justify-content: center;
+}
+
+.service-error__message {
+  color: var(--color-error);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-error__description {
+  font-size: var(--font-size-base-small);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.service-error__retry {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  align-self: center;
+}
+
+.service-error__retry:hover {
+  background-color: var(--color-primary-light);
+}
+
+.service-error__retry:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* SVG Icon Fallback */
+.service-card--error img {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e57373'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+  width: 64px;
+  height: 64px;
+}

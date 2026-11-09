@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Healthy Catering Service - Fresh, nutritious meals for individuals and events">
+  <title>Healthy Catering | Nourish Your Body, Delight Your Senses</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Skip to main content link for keyboard users -->
+  <a href="#main-content" id="skip-link" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="navigation" role="navigation" aria-label="Main navigation">
+    <div class="navigation__brand">
+      <a href="#home" aria-label="Healthy Catering Home">
+        <img src="assets/icons/logo.svg" alt="Healthy Catering Logo" width="40" height="40">
+      </a>
+    </div>
+    
+    <button class="navigation__toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="hamburger">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </span>
+    </button>
+    
+    <ul class="navigation__menu" role="menubar">
+      <li role="none"><a href="#home" role="menuitem">Home</a></li>
+      <li role="none"><a href="#services" role="menuitem">Services</a></li>
+      <li role="none"><a href="#menu" role="menuitem">Menu</a></li>
+      <li role="none"><a href="#about" role="menuitem">About</a></li>
+      <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content area -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-label="Welcome to Healthy Catering">
+      <div class="hero__container">
+        <div class="hero__content">
+          <h1 class="hero__headline">Nourish Your Body, Delight Your Senses</h1>
+          <p class="hero__subheadline">Fresh, nutritious meals for individuals and events</p>
+          <div class="hero__cta-group">
+            <a href="#services" class="btn btn--primary">View Our Services</a>
+            <a href="#contact" class="btn btn--secondary">Contact Us</a>
+          </div>
+        </div>
+        <img 
+          class="hero__image" 
+          src="images/hero/hero-main.webp" 
+          alt="Assortment of fresh, healthy meals on white plates"
+          width="1920" 
+          height="1080"
+          loading="eager"
+        >
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services" aria-label="Our catering services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services__grid">
+          <article class="service-card" tabindex="0" role="button" aria-label="Corporate Events catering service">
+            <div class="service-card__icon">
+              <img src="assets/icons/business-event.svg" alt="Briefcase icon" width="64" height="64">
+            </div>
+            <h3 class="service-card__title">Corporate Events</h3>
+            <p class="service-card__description">Professional catering for business meetings, conferences, and corporate gatherings.</p>
+            <ul class="service-card__features">
+              <li>Delivered hot meals</li>
+              <li>Custom menu options</li>
+              <li>Service staff available</li>
+            </ul>
+          </article>
+
+          <article class="service-card" tabindex="0" role="button" aria-label="Weddings catering service">
+            <div class="service-card__icon">
+              <img src="assets/icons/wedding.svg" alt="Wedding ring icon" width="64" height="64">
+            </div>
+            <h3 class="service-card__title">Weddings</h3>
+            <p class="service-card__description">Elegant catering for your special day with custom menu design and professional service.</p>
+            <ul class="service-card__features">
+              <li>Custom menu design</li>
+              <li>Professional service staff</li>
+              <li>Beverage service options</li>
+            </ul>
+          </article>
+
+          <article class="service-card" tabindex="0" role="button" aria-label="Fitness Retreats catering service">
+            <div class="service-card__icon">
+              <img src="assets/icons/fitness.svg" alt="Dumbbell icon" width="64" height="64">
+            </div>
+            <h3 class="service-card__title">Fitness Retreats</h3>
+            <p class="service-card__description">Nutrition-focused meals designed for fitness enthusiasts and wellness retreats.</p>
+            <ul class="service-card__features">
+              <li>High-protein options</li>
+              <li>Organic ingredients</li>
+              <li>Dietary-specific meals</li>
+            </ul>
+          </article>
+
+          <article class="service-card" tabindex="0" role="button" aria-label="Personal Meal Prep catering service">
+            <div class="service-card__icon">
+              <img src="assets/icons/meal-prep.svg" alt="Meal prep container icon" width="64" height="64">
+            </div>
+            <h3 class="service-card__title">Personal Meal Prep</h3>
+            <p class="service-card__description">Weekly meal preparation services tailored to your dietary needs and preferences.</p>
+            <ul class="service-card__features">
+              <li>Weekly delivery</li>
+              <li>Dietary-specific planning</li>
+              <li>Flexible subscription options</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Samples Section -->
+    <section class="menu" id="menu" aria-label="Menu samples">
+      <div class="container">
+        <h2 class="section-title">Menu Samples</h2>
+        <div class="menu-filters">
+          <button class="filter-btn active" data-filter="all" role="button" aria-expanded="true">All</button>
+          <button class="filter-btn" data-filter="vegan" role="button" aria-expanded="false">Vegan</button>
+          <button class="filter-btn" data-filter="gluten-free" role="button" aria-expanded="false">Gluten-Free</button>
+          <button class="filter-btn" data-filter="keto" role="button" aria-expanded="false">Keto</button>
+        </div>
+        <div class="menu__grid">
+          <article class="menu-item" data-dietary="vegan, gluten-free">
+            <img 
+              src="images/menu/dish1.webp" 
+              srcset="images/menu/dish1-320.webp 320w, images/menu/dish1-768.webp 768w, images/menu/dish1-1200.webp 1200w"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="Quinoa salad with roasted vegetables"
+              width="400" 
+              height="300"
+              loading="lazy"
+            >
+            <div class="menu-item__content">
+              <h3 class="menu-item__title">Quinoa Power Bowl</h3>
+              <p class="menu-item__description">Fresh quinoa with roasted seasonal vegetables and lemon-tahini dressing.</p>
+              <div class="menu-item__tags">
+                <span class="tag tag--dietary tag--vegan">Vegan</span>
+                <span class="tag tag--dietary tag--gluten-free">Gluten-Free</span>
+              </div>
+              <span class="menu-item__serving">Serves: 4-6</span>
+            </div>
+          </article>
+
+          <article class="menu-item" data-dietary="gluten-free">
+            <img 
+              src="images/menu/dish2.webp" 
+              srcset="images/menu/dish2-320.webp 320w, images/menu/dish2-768.webp 768w, images/menu/dish2-1200.webp 1200w"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="Grilled salmon with asparagus"
+              width="400" 
+              height="300"
+              loading="lazy"
+            >
+            <div class="menu-item__content">
+              <h3 class="menu-item__title">Grilled Salmon Plate</h3>
+              <p class="menu-item__description">Fresh Atlantic salmon with seasonal asparagus and wild rice pilaf.</p>
+              <div class="menu-item__tags">
+                <span class="tag tag--dietary tag--gluten-free">Gluten-Free</span>
+              </div>
+              <span class="menu-item__serving">Serves: 2</span>
+            </div>
+          </article>
+
+          <article class="menu-item" data-dietary="keto">
+            <img 
+              src="images/menu/dish3.webp" 
+              srcset="images/menu/dish3-320.webp 320w, images/menu/dish3-768.webp 768w, images/menu/dish3-1200.webp 1200w"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="Keto avocado chicken salad"
+              width="400" 
+              height="300"
+              loading="lazy"
+            >
+            <div class="menu-item__content">
+              <h3 class="menu-item__title">Keto Avocado Chicken</h3>
+              <p class="menu-item__description">Grilled chicken breast with avocado, mixed greens, and olive oil dressing.</p>
+              <div class="menu-item__tags">
+                <span class="tag tag--dietary tag--keto">Keto</span>
+                <span class="tag tag--dietary tag--gluten-free">Gluten-Free</span>
+              </div>
+              <span class="menu-item__serving">Serves: 2</span>
+            </div>
+          </article>
+
+          <article class="menu-item" data-dietary="vegan">
+            <img 
+              src="images/menu/dish4.webp" 
+              srcset="images/menu/dish4-320.webp 320w, images/menu/dish4-768.webp 768w, images/menu/dish4-1200.webp 1200w"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="Vegan Buddha bowl"
+              width="400" 
+              height="300"
+              loading="lazy"
+            >
+            <div class="menu-item__content">
+              <h3 class="menu-item__title">Vegan Buddha Bowl</h3>
+              <p class="menu-item__description">Chickpeas, quinoa, sweet potato, kale with turmeric tahini dressing.</p>
+              <div class="menu-item__tags">
+                <span class="tag tag--dietary tag--vegan">Vegan</span>
+                <span class="tag tag--dietary tag--gluten-free">Gluten-Free</span>
+              </div>
+              <span class="menu-item__serving">Serves: 1</span>
+            </div>
+          </article>
+
+          <article class="menu-item" data-dietary="gluten-free">
+            <img 
+              src="images/menu/dish5.webp" 
+              srcset="images/menu/dish5-320.webp 320w, images/menu/dish5-768.webp 768w, images/menu/dish5-1200.webp 1200w"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="Fresh berry parfait"
+              width="400" 
+              height="300"
+              loading="lazy"
+            >
+            <div class="menu-item__content">
+              <h3 class="menu-item__title">Fresh Berry Parfait</h3>
+              <p class="menu-item__description">Layers of Greek yogurt, fresh berries, granola, and honey.</p>
+              <div class="menu-item__tags">
+                <span class="tag tag--dietary tag--gluten-free">Gluten-Free</span>
+              </div>
+              <span class="menu-item__serving">Serves: 1</span>
+            </div>
+          </article>
+
+          <article class="menu-item" data-dietary="vegan, gluten-free">
+            <img 
+              src="images/menu/dish6.webp" 
+              srcset="images/menu/dish6-320.webp 320w, images/menu/dish6-768.webp 768w, images/menu/dish6-1200.webp 1200w"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="Vegan chocolate protein shake"
+              width="400" 
+              height="300"
+              loading="lazy"
+            >
+            <div class="menu-item__content">
+              <h3 class="menu-item__title">Chocolate Protein Shake</h3>
+              <p class="menu-item__description">Plant-based protein shake with almond milk, banana, and cacao.</p>
+              <div class="menu-item__tags">
+                <span class="tag tag--dietary tag--vegan">Vegan</span>
+                <span class="tag tag--dietary tag--gluten-free">Gluten-Free</span>
+              </div>
+              <span class="menu-item__serving">Serves: 1</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about" aria-label="About our company">
+      <div class="container">
+        <div class="about__content">
+          <h2 class="section-title">Our Philosophy</h2>
+          <p class="about__mission">We believe that healthy eating should be delicious, convenient, and accessible to everyone. Our mission is to nourish communities through exceptional catering services and fresh, nutritious meal options.</p>
+        </div>
+        
+        <h3 class="section-subtitle">Meet Our Team</h3>
+        <div class="team-grid">
+          <article class="team-member">
+            <img 
+              src="images/team/chef-main.webp" 
+              alt="Chef Sarah Johnson, Head Chef"
+              width="200" 
+              height="200"
+              class="team-member__image"
+            >
+            <div class="team-member__content">
+              <h4 class="team-member__name">Sarah Johnson</h4>
+              <p class="team-member__role">Head Chef</p>
+              <p class="team-member__bio">15+ years experience in healthy cuisine with focus on seasonal, local ingredients.</p>
+            </div>
+          </article>
+          
+          <article class="team-member">
+            <img 
+              src="images/team/manager-main.webp" 
+              alt="Michael Chen, Operations Manager"
+              width="200" 
+              height="200"
+              class="team-member__image"
+            >
+            <div class="team-member__content">
+              <h4 class="team-member__name">Michael Chen</h4>
+              <p class="team-member__role">Operations Manager</p>
+              <p class="team-member__bio">10 years in event management and logistics with passion for wellness.</p>
+            </div>
+          </article>
+          
+          <article class="team-member">
+            <img 
+              src="images/team/nutritionist-main.webp" 
+              alt="Emma Rodriguez, Registered Nutritionist"
+              width="200" 
+              height="200"
+              class="team-member__image"
+            >
+            <div class="team-member__content">
+              <h4 class="team-member__name">Emma Rodriguez</h4>
+              <p class="team-member__role">Registered Nutritionist</p>
+              <p class="team-member__bio">MS in Nutrition Science with focus on sports nutrition and meal planning.</p>
+            </div>
+          </article>
+          
+          <article class="team-member">
+            <img 
+              src="images/team/owner-main.webp" 
+              alt="Jessica Williams, Founder"
+              width="200" 
+              height="200"
+              class="team-member__image"
+            >
+            <div class="team-member__content">
+              <h4 class="team-member__name">Jessica Williams</h4>
+              <p class="team-member__role">Founder</p>
+              <p class="team-member__bio">Entrepreneur and wellness advocate committed to making healthy food accessible.</p>
+            </div>
+          </article>
+        </div>
+        
+        <div class="about__cta">
+          <a href="#team-full" class="btn btn--outline">Meet the Full Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact" aria-label="Contact us">
+      <div class="container">
+        <div class="contact__container">
+          <div class="contact__form-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <form class="contact-form" id="contactForm" novalidate aria-describedby="form-status">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="name-error"
+                >
+                <span id="name-error" class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="email-error"
+                >
+                <span id="email-error" class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  aria-describedby="phone-error"
+                >
+                <span id="phone-error" class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="event-type">Event Type</label>
+                <select id="event-type" name="eventType" aria-describedby="event-type-error">
+                  <option value="">Select an event type</option>
+                  <option value="corporate">Corporate Event</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="private">Private Party</option>
+                  <option value="other">Other</option>
+                </select>
+                <span id="event-type-error" class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="event-date">Event Date</label>
+                <input 
+                  type="date" 
+                  id="event-date" 
+                  name="eventDate" 
+                  aria-describedby="event-date-error"
+                >
+                <span id="event-date-error" class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5"
+                  aria-describedby="message-error"
+                ></textarea>
+                <span id="message-error" class="form-error" role="alert" aria-live="polite"></span>
+              </div>
+              
+              <div class="captcha-container">
+                <div class="captcha" data-sitekey="your-captcha-site-key"></div>
+              </div>
+              
+              <button type="submit" class="btn btn--primary btn--block">
+                <span class="btn__text">Send Message</span>
+                <span class="btn__spinner" role="status" aria-hidden="true"></span>
+              </button>
+            </form>
+            
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </div>
+          
+          <div class="contact__info-section">
+            <h3 class="section-subtitle">Contact Information</h3>
+            
+            <div class="contact-info">
+              <div class="contact-info__item">
+                <svg class="contact-info__icon" aria-hidden="true">
+                  <use href="#icon-phone"></use>
+                </svg>
+                <div class="contact-info__content">
+                  <span class="contact-info__label">Phone</span>
+                  <a href="tel:+1234567890" aria-label="Call us at +1 (234) 567-890">+1 (234) 567-890</a>
+                </div>
+              </div>
+              
+              <div class="contact-info__item">
+                <svg class="contact-info__icon" aria-hidden="true">
+                  <use href="#icon-email"></use>
+                </svg>
+                <div class="contact-info__content">
+                  <span class="contact-info__label">Email</span>
+                  <a href="mailto:info@healthy-catering.com" aria-label="Email us at info@healthy-catering.com">
+                    info@healthy-catering.com
+                  </a>
+                </div>
+              </div>
+              
+              <div class="contact-info__item">
+                <svg class="contact-info__icon" aria-hidden="true">
+                  <use href="#icon-location"></use>
+                </svg>
+                <div class="contact-info__content">
+                  <span class="contact-info__label">Location</span>
+                  <span>123 Wellness Blvd, Suite 400<br>Metropolis, NY 10001</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="https://instagram.com/healthy-catering" aria-label="Follow us on Instagram">
+                <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+              </a>
+              <a href="https://facebook.com/healthy-catering" aria-label="Like us on Facebook">
+                <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+              </a>
+              <a href="https://linkedin.com/company/healthy-catering" aria-label="Connect with us on LinkedIn">
+                <svg aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="assets/icons/logo.svg" alt="Healthy Catering Logo" width="40" height="40">
+          <p>Nutritious meals for every occasion</p>
+        </div>
+        
+        <div class="footer__navigation">
+          <nav aria-label="Footer navigation">
+            <ul>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Service</a></li>
+              <li><a href="#sitemap">Sitemap</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="footer__copyright">
+          <p>&copy; <span id="current-year">2025</span> Healthy Catering Service. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SVG Icon Sprite -->
+  <svg aria-hidden="true" style="display: none;">
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path>
+    </symbol>
+    <symbol id="icon-email" viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+    </symbol>
+    <symbol id="icon-location" viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <path d="M7.8 2h8.4C19.4 2 21 3.6 21 5.4v13.2c0 1.8-1.6 3.4-3.6 3.4H7.8C6 22 4.4 20.4 4.4 18.6V5.4C4.4 3.6 6 2 7.8 2zm6.6 16c2.5 0 4.6-2.1 4.6-4.6 0-2.5-2.1-4.6-4.6-4.6s-4.6 2.1-4.6 4.6c0 2.5 2.1 4.6 4.6 4.6zm-4.6-8c1.9 0 3.4 1.5 3.4 3.4 0 1.9-1.5 3.4-3.4 3.4S6.8 14.3 6.8 12.4c0-1.9 1.5-3.4 3.4-3.4zm2.1 5.5h-2.6v-2.6h2.6v2.6zm3.1-2.6h-2.6v2.6h2.6v-2.6z"></path>
+    </symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+    </symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24">
+      <path d="M21 6h-2v2h-2V6H7v2H5V6H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-9 2h2v2h-2V8zm-9 11H3V8h18v11z"></path>
+    </symbol>
+    <symbol id="icon-wedding" viewBox="0 0 24 24">
+      <path d="M19 5v14c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2zm-5 14h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2z"></path>
+    </symbol>
+    <symbol id="icon-fitness" viewBox="0 0 24 24">
+      <path d="M17 12h-2v2h2v-2zm-6 4h-2v-2h2v2zm4-8h-2v2h2V8zm-6 0h-2v2H7V8zm4 4h-2v2h2v-2zm-6 4h-2v2H7v-2zm10-6h-2v2h2v-2zm-4 4h-2v2h2v-2zm4-4h-2v2h2v-2z"></path>
+    </symbol>
+    <symbol id="icon-meal-prep" viewBox="0 0 24 24">
+      <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4h3l2 4h2L9 4h2l2 4h2l2-4h3zM6 12h12v2H6v-2zm2 4h8v2H8v-2z"></path>
+    </symbol>
+  </svg>
+
+  <!-- JavaScript -->
+  <script src="js/components/navigation.js"></script>
+  <script src="js/components/smoothScroll.js"></script>
+  <script src="js/components/imageOptimizer.js"></script>
+  <script src="js/components/formValidation.js"></script>
+  <script src="js/components/emailService.js"></script>
+  <script src="js/components/formHandler.js"></script>
+  <script src="js/components/serviceHandler.js"></script>
+  <script src="js/components/keyboardNavigation.js"></script>
+  <script src="js/components/screenReaderSupport.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

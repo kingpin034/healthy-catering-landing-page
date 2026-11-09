@@ -1,0 +1,435 @@
+/* Typography Utility Classes
+ * Based on Requirement 13.2: Typography Consistency
+ * Uses variables from variables.css
+ */
+
+/* =========================================
+   HEADING STYLES (Requirement 13.2)
+   ========================================= */
+
+/* Heading 1 - 48px, bold */
+h1,
+.typo-h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin: var(--spacing-xxl) 0 var(--spacing-medium);
+}
+
+/* Heading 2 - 36px, bold */
+h2,
+.typo-h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  margin: var(--spacing-xxl) 0 var(--spacing-medium);
+}
+
+/* Heading 3 - 28px, semi-bold */
+h3,
+.typo-h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  margin: var(--spacing-xl) 0 var(--spacing-small);
+}
+
+/* Heading 4 - 24px, semi-bold */
+h4,
+.typo-h4 {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  margin: var(--spacing-large) 0 var(--spacing-small);
+}
+
+/* Heading 5 - 20px, normal */
+h5,
+.typo-h5 {
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  margin: var(--spacing-medium) 0 var(--spacing-tiny);
+}
+
+/* Heading 6 - 18px, normal */
+h6,
+.typo-h6 {
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-primary);
+  margin: var(--spacing-medium) 0 var(--spacing-tiny);
+}
+
+/* =========================================
+   BODY TEXT STYLES (Requirement 13.2)
+   ========================================= */
+
+/* Base body text - 16px minimum */
+body,
+.typo-body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Small body text - 14px */
+.typo-body-small {
+  font-size: var(--font-size-base-small);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  color: var(--color-text-secondary);
+}
+
+/* Large body text - 18px */
+.typo-body-large {
+  font-size: var(--font-size-base-large);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+}
+
+/* =========================================
+   TEXT UTILITIES - ALIGNMENT
+   ========================================= */
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* =========================================
+   TEXT UTILITIES - WEIGHT
+   ========================================= */
+
+.font-weight-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-weight-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* =========================================
+   TEXT UTILITIES - COLOR
+   ========================================= */
+
+.text-color-primary {
+  color: var(--color-text-primary);
+}
+
+.text-color-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-color-muted {
+  color: var(--color-text-light);
+}
+
+/* Text color on primary background */
+.text-on-primary {
+  color: var(--color-background);
+}
+
+.text-on-secondary {
+  color: var(--color-background);
+}
+
+/* =========================================
+   TEXT UTILITIES - TRANSFORMATION
+   ========================================= */
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* =========================================
+   TEXT UTILITIES - DECORATION
+   ========================================= */
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+/* =========================================
+   TEXT UTILITIES - WRAPPING & TRUNCATION
+   ========================================= */
+
+/* Text overflow - ellipsis */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Multi-line text truncation */
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Word breaking */
+.word-break-normal {
+  word-break: normal;
+}
+
+.word-break-all {
+  word-break: break-all;
+}
+
+.word-break-keep {
+  word-break: keep-all;
+}
+
+/* =========================================
+   TEXT UTILITIES - SPACING
+   ========================================= */
+
+.letter-spacing-tight {
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.letter-spacing-normal {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.letter-spacing-wide {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* =========================================
+   LINE HEIGHT UTILITIES
+   ========================================= */
+
+.line-height-tight {
+  line-height: var(--line-height-tight);
+}
+
+.line-height-normal {
+  line-height: var(--line-height-base);
+}
+
+.line-height-loose {
+  line-height: var(--line-height-loose);
+}
+
+/* =========================================
+   SECTION TITLES (Common Component Patterns)
+   ========================================= */
+
+/* Section title - large heading with bottom margin */
+.section-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin: var(--spacing-section) 0 var(--spacing-medium);
+  text-align: center;
+}
+
+/* Section subtitle - medium heading */
+.section-subtitle {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  margin: var(--spacing-xxl) 0 var(--spacing-small);
+  text-align: center;
+}
+
+/* =========================================
+   UTILITY CLASSES FOR SPECIFIC ELEMENTS
+   ========================================= */
+
+/* Button text */
+.btn-text {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Form label */
+.form-label {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-tiny);
+}
+
+/* Form helper text */
+.form-helper {
+  font-size: var(--font-size-base-small);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-tiny);
+}
+
+/* Form error */
+.form-error {
+  font-size: var(--font-size-base-small);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-error);
+  margin-top: var(--spacing-tiny);
+}
+
+/* Link text */
+.link-text {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.link-text:hover,
+.link-text:focus {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* =========================================
+   ACCESSIBILITY UTILITIES
+   ========================================= */
+
+/* Screen reader only */
+.sr-only {
+  position: var(--sr-only-position);
+  width: var(--sr-only-width);
+  height: var(--sr-only-height);
+  padding: var(--sr-only-padding);
+  margin: var(--sr-only-margin);
+  overflow: var(--sr-only-overflow);
+  border: var(--sr-only-border);
+  clip: var(--sr-only-clip);
+  clip-path: var(--sr-only-clip-path);
+}
+
+/* Screen reader only when not focused */
+.sr-only-focusable:not(:focus) {
+  position: var(--sr-only-position);
+  width: var(--sr-only-width);
+  height: var(--sr-only-height);
+  padding: var(--sr-only-padding);
+  margin: var(--sr-only-margin);
+  overflow: var(--sr-only-overflow);
+  border: var(--sr-only-border);
+  clip: var(--sr-only-clip);
+  clip-path: var(--sr-only-clip-path);
+}
+
+/* =========================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================= */
+
+/* Tablet and up */
+@media (min-width: var(--breakpoint-tablet)) {
+  .typo-h1-tablet {
+    font-size: calc(var(--font-size-h1) * 1.2);
+  }
+  
+  .typo-h2-tablet {
+    font-size: calc(var(--font-size-h2) * 1.1);
+  }
+  
+  .typo-body-tablet {
+    font-size: calc(var(--font-size-base) * 1.0625);
+  }
+}
+
+/* Desktop and up */
+@media (min-width: var(--breakpoint-desktop)) {
+  .typo-h1-desktop {
+    font-size: calc(var(--font-size-h1) * 1.33);
+  }
+  
+  .typo-h2-desktop {
+    font-size: calc(var(--font-size-h2) * 1.25);
+  }
+  
+  .typo-h3-desktop {
+    font-size: calc(var(--font-size-h3) * 1.14);
+  }
+  
+  .typo-body-desktop {
+    font-size: calc(var(--font-size-base) * 1.125);
+  }
+}
+
+/* =========================================
+   PRINT STYLES
+   ========================================= */
+
+@media print {
+  /* Ensure text prints in black */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .typo-body,
+  .typo-body-small,
+  .typo-body-large {
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

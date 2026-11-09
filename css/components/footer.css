@@ -1,0 +1,160 @@
+/* Footer Component Styles
+ * Requirement 8.3
+ */
+
+/* Import CSS variables for consistent theming */
+@import '../utils/variables.css';
+
+/* Footer Base Styles */
+.footer {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  padding: var(--spacing-2xl) var(--spacing-unit);
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Brand Section */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.footer__brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer__brand p {
+  margin: 0;
+  font-size: var(--font-size-base-small);
+  color: var(--color-background);
+  opacity: 0.8;
+}
+
+/* Footer Navigation */
+.footer__navigation {
+  width: 100%;
+  max-width: 300px;
+}
+
+.footer__navigation nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.footer__navigation nav li {
+  margin: 0;
+}
+
+.footer__navigation a {
+  color: var(--color-background);
+  text-decoration: none;
+  font-size: var(--font-size-base-small);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.footer__navigation a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+}
+
+.footer__navigation a:focus {
+  outline: 2px solid var(--color-background);
+  outline-offset: 2px;
+}
+
+/* Copyright Section */
+.footer__copyright {
+  text-align: center;
+  width: 100%;
+}
+
+.footer__copyright p {
+  margin: 0;
+  font-size: var(--font-size-base-small);
+  color: var(--color-background);
+  opacity: 0.7;
+}
+
+#current-year {
+  font-weight: var(--font-weight-normal);
+}
+
+/* Responsive Styles - Desktop (768px and above) */
+@media (min-width: 768px) {
+  .footer {
+    padding: var(--spacing-3xl) var(--spacing-unit);
+  }
+
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer__brand {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .footer__brand p {
+    order: 2;
+  }
+
+  .footer__navigation {
+    max-width: none;
+    flex: 1;
+  }
+
+  .footer__navigation nav ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .footer__copyright {
+    max-width: 250px;
+    text-align: right;
+  }
+}
+
+/* High contrast mode support for accessibility */
+@media (prefers-contrast: more) {
+  .footer__navigation a:focus,
+  .footer a:focus {
+    outline: 3px solid var(--color-background);
+    outline-offset: 2px;
+  }
+
+  .footer__copyright,
+  .footer__brand p {
+    opacity: 1;
+  }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .footer__navigation a {
+    transition: none;
+  }
+}
